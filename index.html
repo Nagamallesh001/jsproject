@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Homepage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+  }
+  header {
+    background-color: #8bf08f;
+    background-image: linear-gradient(white,white,white,white,white,rgb(161, 157, 157),rgb(55, 53, 53));
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 5px;
+  }
+  nav {
+    background-color: transparent;
+    overflow: hidden;
+  }
+  nav a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+
+  }
+  nav a:hover {
+    background-color:rgb(104, 104, 189);
+    color: white;
+    transform: scale(1.2,1.2);
+  }
+  img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  .backimg{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://egn9cp35vs4.exactdn.com/uploads/2020/09/10115242/GettyImages-685026863-1920.jpg?strip=all&lossy=1&ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 33em;
+  }
+  
+  
+  li{
+    font-size: 30px;
+    
+  }
+  #mybutton{
+    position: relative;
+    left: 68em;
+    top: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    margin-left: 10px;
+    color: rgb(19, 19, 68);
+    transform: scale(1.2,1.2);
+    background-color: lightblue;
+    animation-name: login-button ;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;  
+  }
+  #mybutton:hover{
+    background-color: rgb(68, 185, 224);
+  }
+
+  /* @keyframes login-button{
+    form{
+    transform: scale(1.2,1.2);
+    background-color: red;
+
+    }
+  
+     to {
+    background-color: green;
+    transform: scale(1.4,1.4);
+    cursor: pointer;
+  } */
+/* } */
+.h21,p{
+text-align: center;
+  
+}
+#orderbtn{
+  background-color: rgb(79, 196, 79);
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 42rem;
+}
+#orderbtn:hover{
+  background-color: green;
+}
+
+.p1{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
+nav{
+  position: relative;
+    position: sticky;
+    top: 0px;
+}
+  
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Medicine Homepage</h1>
+</header>
+<div class="backimg">
+
+<nav>
+  <a href="./homepage.html">Home</a>
+  <a href="#">About</a>
+  <a href="https://www.1mg.com/marketer/tablets-india-limited-55698">Products</a>
+  <a href="tel:6300913779">Contact</a>
+  <button id="mybutton">Login</button>
+</nav>
+
+<div class="container">
+  <h2 class="h21">Featured Medicines</h2>
+  <p>Here are some of our featured medicines:</p>
+  <ul id="featuredMedicines">
+  </ul>
+  
+</div>
+<ul>
+    <li>Paracetamol</li>
+    <li>Aspirin</li>
+    <li>Ibuprofen</li>
+    <li>Loratadine</li>
+    <li>Omeprazole</li>
+</ul>
+
+<h2 class="h21">To book order medicien</h2>
+<button id="orderbtn">Order Now</button>
+
+
+</div>
+<footer>
+  <p>&copy; 2024 Medicine Reminder</p>
+    
+</footer>
+
+<script>
+      const button = document.getElementById('mybutton');
+      button.addEventListener('click', function() {
+        alert('Loginform!');
+        window.location.assign("loginform.html");
+
+    });
+
+    const button1 = document.getElementById('orderbtn');
+      button1.addEventListener('click', function() {
+        window.location.assign("jsproject.html");
+
+    });
+   
+   
+
+</script>
+
+</body>
+</html>

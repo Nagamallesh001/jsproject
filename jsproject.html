@@ -6,242 +6,313 @@
     <title>Medicine Reminder</title>
     <style>
         body {
-    font-family: Arial;
-    margin: 0;
-    padding: 0;
-    background-image: url('https://t4.ftcdn.net/jpg/04/24/30/93/360_F_424309320_UkOxg2z3sq7yXwGnWCO6xBXkRI4byhnI.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://t4.ftcdn.net/jpg/04/24/30/93/360_F_424309320_UkOxg2z3sq7yXwGnWCO6xBXkRI4byhnI.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow-x: hidden;
+        }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
 
-header h1 {
-    margin: 0;
-}
+        header h1 {
+            margin: 0;
+        }
 
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
 
-section {
-    margin-bottom: 30px;
-}
+        section {
+            margin-bottom: 30px;
+        }
 
-h2 {
-    margin-top: 0;
-}
+        h2 {
+            margin-top: 0;
+        }
 
-input[type="text"],input[type="number"],select,input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    box-sizing: border-box;
-}
+        input[type="text"], input[type="number"], select, input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
 
-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
 
-button:hover {
-    background-color: #555;
-}
+        button:hover {
+            background-color: #555;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    background-color: rgb(71, 205, 71);
-    animation-name: anim1;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-}
-@keyframes anim1 {
-    form{
-        background-color: lightgreen;
-    }
-    to{
-        background-color: white;
-    }
-}
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: rgb(71, 205, 71);
+            animation-name: anim1;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
 
-th {
-    background-color: #f2f2f2;
-}
+        @keyframes anim1 {
+            from {
+                background-color: lightgreen;
+            }
+            to {
+                background-color: white;
+            }
+        }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width:100%;
-}
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .hero {
+            font-size: 30px;
+            margin-left: 21em;
+        }
     </style>
 </head>
 <body>
-    
-    <header>
-        <h1>Medicine Reminder</h1>
-    </header>
-    <main>
-        <section id="add-medication">
-            <h2>Add Medication</h2>
-            <form id="medication-form">
-                <label for="medication-name">Medication Name:</label>
-                <input type="text" id="medication-name" required>
-                <label for="medication-dosage">Dosage:</label>
-                <input type="text" id="medication-dosage" required>
-                <label for="medication-frequency">Frequency:</label>
-                <select id="medication-frequency">
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                </select>
-                <label for="start-date">Start Date:</label>
-                <input type="date" id="start-date" required>
-                <button type="submit">Add Medication</button>
-            </form>
-        </section>
-        <section id="set-reminders">
-            <h2>Set Reminders</h2>
-            <form id="reminder-form">
-            </form>
-        </section>
-        <section id="view-schedule">
-            <h2>View Schedule</h2>
-            <table id="schedule-table">
-            </table>
-        </section>
-        <section id="record-doses">
-            <h2>Record Doses Taken</h2>
-            <form id="record-dose-form">
+<header>
+    <h1>Medicine Reminder</h1>
+</header>
+<main>
+    <section id="add-medication">
+        <h2>Add Medication</h2>
+        <div class="hero">
+            <div class="box">
+                <div class="clock">
+                    <span id="hrs">00</span>
+                    <span>:</span>
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                </div>
+            </div>
+        </div>
+        <form id="medication-form">
+            <label for="medication-name">Medication Name:</label>
+            <input type="text" id="medication-name" required>
 
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Medicine Reminder</p>
-    </footer>
-    <script>
+            <label for="medication-dosage">Dosage:</label>
+            <input type="text" id="medication-dosage" required>
 
-let medications = [];
+            <label for="medication-frequency">Frequency:</label>
+            <select id="medication-frequency">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
 
-function addMedication(event) {
-    event.preventDefault();
-    
-    const medicationName = document.getElementById('medication-name').value;
-    const medicationDosage = document.getElementById('medication-dosage').value;
-    const medicationFrequency = document.getElementById('medication-frequency').value;
-    const startDate = document.getElementById('start-date').value;
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" required>
 
-    const medication = {
-        name: medicationName,
-        dosage: medicationDosage,
-        frequency: medicationFrequency,
-        startDate: startDate,
-        reminders: [],
-        history: []
-    };
+            <label for="set-time">Time:</label>
+            <input type="time" id="set-time" required>
 
-    medications.push(medication);
-   
-    document.getElementById('medication-form').reset();
-    
-    updateReminderForm();
-    
-    viewSchedule();
-}
+            <button type="submit">Add Medication</button>
+        </form>
+    </section>
+    <section id="set-reminders">
+        <h2>Set Reminders</h2>
+        <form id="reminder-form">
+        </form>
+    </section>
+    <section id="view-schedule">
+        <h2>View Schedule</h2>
+        <table id="schedule-table">
+        </table>
+    </section>
+    <section id="record-doses">
+        <h2>Record Doses Taken</h2>
+        <form id="record-dose-form">
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Medicine Reminder</p>
+</footer>
 
-function updateReminderForm() {
-    const medicationSelect = document.createElement('select');
-    medicationSelect.setAttribute('id', 'selected-medication');
+<script>
+    let medications = [];
 
-    medications.forEach((medication, index) => {
-        const option = document.createElement('option');
-        option.setAttribute('value', index);
-        option.textContent = medication.name;
-        medicationSelect.appendChild(option);
-    });
+    function addMedication(event) {
+        event.preventDefault();
 
-    const reminderForm = document.getElementById('reminder-form');
-    reminderForm.innerHTML = ''; 
-    reminderForm.appendChild(medicationSelect);
-}
- 
-function calculateNextDoseDate(medication) {
-    const frequency = medication.frequency;
-    const startDate = new Date(medication.startDate);
-    const currentDate = new Date();
-    let nextDoseDate = new Date(startDate);
+        const medicationName = document.getElementById('medication-name').value;
+        const medicationDosage = document.getElementById('medication-dosage').value;
+        const medicationFrequency = document.getElementById('medication-frequency').value;
+        const startDate = document.getElementById('start-date').value;
+        const setTime = document.getElementById('set-time').value;
 
-    while (nextDoseDate < currentDate) {
-        switch (frequency) {
-            case 'daily':
-                nextDoseDate.setDate(nextDoseDate.getDate() + 1);
-                break;
-            case 'weekly':
-                nextDoseDate.setDate(nextDoseDate.getDate() + 7);
-                break;
-            case 'monthly':
-                nextDoseDate.setDate(nextDoseDate.getDate() + 30);
-                break;               
-        }
+        const medication = {
+            name: medicationName,
+            dosage: medicationDosage,
+            frequency: medicationFrequency,
+            startDate: startDate,
+            setTime: setTime,
+            reminders: [],
+            history: []
+        };
+
+        medications.push(medication);
+
+        document.getElementById('medication-form').reset();
+
+        updateReminderForm();
+
+        viewSchedule();
     }
 
-    return nextDoseDate;
-}
+    function updateReminderForm() {
+        const medicationSelect = document.createElement('select');
+        medicationSelect.setAttribute('id', 'selected-medication');
 
-function viewSchedule() {
-    const scheduleTable = document.getElementById('schedule-table');
-    scheduleTable.innerHTML = ''; 
+        medications.forEach((medication, index) => {
+            const option = document.createElement('option');
+            option.setAttribute('value', index);
+            option.textContent = medication.name;
+            medicationSelect.appendChild(option);
+        });
 
-    const tableHeader = `
+        const reminderForm = document.getElementById('reminder-form');
+        reminderForm.innerHTML = '';
+        reminderForm.appendChild(medicationSelect);
+    }
+
+
+    function calculateNextDoseDate(medication) {
+        const frequency = medication.frequency;
+        const startDate = new Date(medication.startDate);
+        const currentDate = new Date();
+        let nextDoseDate = new Date(startDate);
+
+        while (nextDoseDate < currentDate) {
+            switch (frequency) {
+                case 'daily':
+                    nextDoseDate.setDate(nextDoseDate.getDate() + 1);
+                    break;
+                case 'weekly':
+                    nextDoseDate.setDate(nextDoseDate.getDate() + 7);
+                    break;
+                case 'monthly':
+                    nextDoseDate.setDate(nextDoseDate.getDate() + 30);
+                    break;
+            }
+        }
+
+        return nextDoseDate;
+    }
+
+    function viewSchedule() {
+        const scheduleTable = document.getElementById('schedule-table');
+        scheduleTable.innerHTML = '';
+
+        const tableHeader = `
         <tr>
             <th>Medication Name</th>
             <th>Next Dose</th>
+            <th>Next Tablet</th>
             <th>Last Taken</th>
         </tr>
     `;
-    scheduleTable.insertAdjacentHTML('beforeend', tableHeader);
+        scheduleTable.insertAdjacentHTML('beforeend', tableHeader);
 
-    medications.forEach(medication => {
-        const nextDoseDate = calculateNextDoseDate(medication);
-        const lastTakenDate = medication.history.length > 0 ? medication.history[medication.history.length - 1].date : 'Not taken yet';
-        const row = `
+        medications.forEach(medication => {
+            const nextDoseDate = calculateNextDoseDate(medication);
+            const nextDoseTime = medication.setTime; // Here you should use the setTime property from the medication object
+            const lastTakenDate = medication.history.length > 0 ? medication.history[medication.history.length - 1].date : 'Not taken yet';
+            const row = `
             <tr>
                 <td>${medication.name}</td>
                 <td>${nextDoseDate.toDateString()}</td>
+                <td>${nextDoseTime}</td>
                 <td>${lastTakenDate}</td>
             </tr>
         `;
-        scheduleTable.insertAdjacentHTML('beforeend', row);
-    });
-}
+            scheduleTable.insertAdjacentHTML('beforeend', row);
+        });
+    }
+
+    document.getElementById('medication-form').addEventListener('submit', addMedication);
+</script>
 
 
-document.getElementById('medication-form').addEventListener('submit', addMedication);
+<script>
+    function checkMedicationTime() {
+        const currentTime = new Date();
 
-        
-        </script>
-        
+        medications.forEach(medication => {
+            const nextDoseDate = calculateNextDoseDate(medication);
+
+            // Get the set time for medication intake
+            const setTime = new Date(medication.startDate + ' ' + medication.setTime);
+            
+            // Check if the current time matches the set time for medication intake
+            if (currentTime.getHours() === setTime.getHours() && 
+                currentTime.getMinutes() === setTime.getMinutes()) {
+                alert(`Time to take your medication:
+                            Name: ${medication.name}
+                            Dosage: ${medication.dosage}
+                            Frequency: ${medication.frequency}`);
+            }
+        });
+    }
+
+    setInterval(checkMedicationTime, 60000); // 60000 milliseconds = 1 minute
+</script>
+
+
+<script>
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    setInterval(() => {
+        let currentTime = new Date();
+        hrs.innerHTML =
+            (currentTime.getHours() < 10 ? "0" : "") +
+            currentTime.getHours();
+        min.innerHTML =
+            (currentTime.getMinutes() < 10 ? "0" : "") +
+            currentTime.getMinutes();
+        sec.innerHTML =
+            (currentTime.getSeconds() < 10 ? "0" : "") +
+            currentTime.getSeconds();
+    }, 1000);
+</script>
+
 </body>
 </html>
